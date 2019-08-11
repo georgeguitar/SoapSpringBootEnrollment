@@ -3,7 +3,7 @@
 Autor: Navarro Arias, Juan Dirceu.  
 Modulo: Consumo de APIs.  
 Universidad Andina Simón Bolivar.  
-Sede, Sucre, Bolivia.  
+Sede Sucre, Bolivia.  
 
 ## Descripción:
 Proyecto que ofrece servicios SOAP que utiliza la misma base de datos que el proyecto [REST](https://github.com/georgeguitar/rest_enrollment_server.git)

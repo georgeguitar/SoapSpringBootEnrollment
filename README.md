@@ -17,8 +17,8 @@ Proyecto que ofrece servicios SOAP que utiliza la misma base de datos que el pro
 Sistema operativo: Debian 10 con Gnome  
 IDE: Eclipse v.4.12.0  
 Cliente SOAP: [SoapUI](https://www.soapui.org/) v.5.5.0   
-Navegador web: Firefox 60.8.0esr
-
+Navegador web: Firefox 60.8.0esr  
+Framework: Spring Boot con JAXB2 para el mapeo de clases del archivo XML.  
 
 ## Para consumir los servicios de SOAP.
 

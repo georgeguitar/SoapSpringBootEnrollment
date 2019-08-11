@@ -5,13 +5,16 @@ Modulo: Consumo de APIs.
 Universidad Andina Simón Bolivar.  
 Sede Sucre, Bolivia.  
 
-## Descripción:
+## Descripción.
 Proyecto que ofrece servicios SOAP que utiliza la misma base de datos que el proyecto [REST](https://github.com/georgeguitar/rest_enrollment_server.git)
 
 <div>
 <img src="servicio_soap.png" width="1000"/>
 </div>
 
+## Base de datos.
+
+![Servicios](enrollment-jdl.png)
 
 ## Herramientas utilizadas.
 Sistema operativo: Debian 10 con Gnome  
@@ -22,7 +25,7 @@ Framework: Spring Boot con JAXB2 para el mapeo de clases del archivo XML.
 
 ## Para consumir los servicios de SOAP.
 
-Los servicios se consumen con el programa SoapUI, se implementó los servicios para la tabla STUDENT, se cuenta los siguientes servicios:
+Los servicios se consumen con el programa SoapUI, se implementó los servicios para la tabla **STUDENT**, se cuenta los siguientes servicios:
 
 ![Servicios](servicios_soap.png)
 

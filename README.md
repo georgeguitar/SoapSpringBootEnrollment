@@ -16,12 +16,14 @@ Proyecto que ofrece servicios SOAP que utiliza la misma base de datos que el pro
 
 ![Servicios](enrollment-jdl.png)
 
+El archivo *enrollmentDB.sql* contiene la base de datos para Mysql.
+
 ## Herramientas utilizadas.
 Sistema operativo: Debian 10 con Gnome  
 IDE: Eclipse v.4.12.0  
 Cliente SOAP: [SoapUI](https://www.soapui.org/) v.5.5.0   
 Navegador web: Firefox 60.8.0esr  
-Framework: Spring Boot con JAXB2 para el mapeo de clases del archivo XML.  
+Framework: Spring Boot con JAXB2 para el mapeo de clases del archivo XML (esquema XSD) que contiene las operaciones CRUD disponibles.  
 
 ## Para consumir los servicios de SOAP.
 
@@ -43,3 +45,18 @@ Dejar seleccionada la opción: “Create sample requests for all operations” p
 
 El servicio “deleteStudent” solo podrá borrar aquellos estudiantes que no estén matriculados 
 (que no estén en la tabla "Enrollment"). Para hacer la prueba, se debería crear un estudiante con “addStudent” que luego borrarlo.
+
+## Comandos de maven.
+
+### Para importar en Eclipse.
+mvn clean eclipse:eclipse  
+
+### Para correr el proyecto.
+mvn spring-boot:run  
+
+### Para crear el jar ejecutable.
+mvn clean package  
+
+## Fuentes.
+[https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)  
+[https://www.concretepage.com/spring-boot/spring-boot-soap-web-service-example](https://spring.io/projects/spring-boot)

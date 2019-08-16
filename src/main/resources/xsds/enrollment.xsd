@@ -1,0 +1,93 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.dirceupage.com/enrollment-ws"
+           targetNamespace="http://www.dirceupage.com/enrollment-ws" elementFormDefault="qualified">
+
+    <xs:element name="getEnrollmentByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enrollmentId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getEnrollmentByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enrollmentInfo" type="tns:enrollmentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="enrollmentInfo">
+        <xs:sequence>
+            <xs:element name="enrollmentId" type="xs:long"/>
+            <xs:element name="year" type="xs:string"/>
+            <xs:element name="period" type="xs:string"/>
+            <xs:element name="level" type="xs:string"/>
+            <xs:element name="date_enrollment" type="xs:string"/>
+            <xs:element name="student_id" type="xs:string"/>
+            <xs:element name="program_id" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="getAllEnrollmentsRequest">
+        <xs:complexType/>
+    </xs:element>    
+    <xs:element name="getAllEnrollmentsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enrollmentInfo" type="tns:enrollmentInfo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+    <xs:complexType name="serviceStatusEnrollment">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>     
+    <xs:element name="addEnrollmentRequest">
+        <xs:complexType>
+            <xs:sequence>
+            <xs:element name="year" type="xs:string"/>
+            <xs:element name="period" type="xs:string"/>
+            <xs:element name="level" type="xs:string"/>
+            <xs:element name="date_enrollment" type="xs:string"/>
+            <xs:element name="student_id" type="xs:string"/>
+            <xs:element name="program_id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addEnrollmentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatusEnrollment" type="tns:serviceStatusEnrollment"/>            
+                <xs:element name="enrollmentInfo" type="tns:enrollmentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateEnrollmentRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="enrollmentInfo" type="tns:enrollmentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateEnrollmentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatusEnrollment" type="tns:serviceStatusEnrollment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteEnrollmentRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="enrollmentId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteEnrollmentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatusEnrollment" type="tns:serviceStatusEnrollment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>                   
+</xs:schema>

@@ -22,6 +22,7 @@ public class WSConfig extends WsConfigurerAdapter {
 		servlet.setTransformWsdlLocations(true);
 		return new ServletRegistrationBean(servlet, "/soapws/*");
 	}
+	
 	@Bean(name = "students")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema studentsSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
@@ -34,5 +35,33 @@ public class WSConfig extends WsConfigurerAdapter {
 	@Bean
 	public XsdSchema studentsSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("xsds/students.xsd"));
+	}
+	
+	@Bean(name = "programs")
+	public DefaultWsdl11Definition programWsdl11Definition(XsdSchema programsSchema) {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		wsdl11Definition.setPortTypeName("ProgramPort");
+		wsdl11Definition.setLocationUri("/soapws");
+		wsdl11Definition.setTargetNamespace("http://www.dirceupage.com/program-ws");
+		wsdl11Definition.setSchema(programsSchema);
+		return wsdl11Definition;
+	}
+	@Bean
+	public XsdSchema programsSchema() {
+		return new SimpleXsdSchema(new ClassPathResource("xsds/programs.xsd"));
+	}
+	
+	@Bean(name = "enrollment")
+	public DefaultWsdl11Definition enrollmentWsdl11Definition(XsdSchema enrollmentsSchema) {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		wsdl11Definition.setPortTypeName("EnrollmentPort");
+		wsdl11Definition.setLocationUri("/soapws");
+		wsdl11Definition.setTargetNamespace("http://www.dirceupage.com/enrollment-ws");
+		wsdl11Definition.setSchema(enrollmentsSchema);
+		return wsdl11Definition;
+	}
+	@Bean
+	public XsdSchema enrollmentsSchema() {
+		return new SimpleXsdSchema(new ClassPathResource("xsds/enrollment.xsd"));
 	}
 }

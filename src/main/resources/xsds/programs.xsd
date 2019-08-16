@@ -1,0 +1,90 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.dirceupage.com/program-ws"
+           targetNamespace="http://www.dirceupage.com/program-ws" elementFormDefault="qualified">
+
+    <xs:element name="getProgramByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="programId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getProgramByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="programInfo" type="tns:programInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="programInfo">
+        <xs:sequence>
+            <xs:element name="programId" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="semesters" type="xs:string"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="credits" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="getAllProgramsRequest">
+        <xs:complexType/>
+    </xs:element>    
+    <xs:element name="getAllProgramsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="programInfo" type="tns:programInfo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+    <xs:complexType name="serviceStatusProgram">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>     
+    <xs:element name="addProgramRequest">
+        <xs:complexType>
+            <xs:sequence>
+	            <xs:element name="name" type="xs:string"/>
+	            <xs:element name="semesters" type="xs:string"/>
+	            <xs:element name="title" type="xs:string"/>
+	            <xs:element name="credits" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addProgramResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatusProgram" type="tns:serviceStatusProgram"/>            
+                <xs:element name="programInfo" type="tns:programInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateProgramRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="programInfo" type="tns:programInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateProgramResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatusProgram" type="tns:serviceStatusProgram"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteProgramRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="programId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteProgramResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatusProgram" type="tns:serviceStatusProgram"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>     
+                           
+</xs:schema>

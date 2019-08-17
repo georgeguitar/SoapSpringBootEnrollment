@@ -6,8 +6,8 @@ import com.dirceu.entity.Student;
 
 public interface IStudentService {
      List<Student> getAllStudents();
-     Student getStudentById(long StudentId);
-     boolean addStudent(Student Student);
-     void updateStudent(Student Student);
-     void deleteStudent(Student Student);
+     Student getStudentById(long studentId);
+     boolean addStudent(Student student);
+     void updateStudent(Student student);
+     void deleteStudent(Student student);
 }

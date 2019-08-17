@@ -51,7 +51,7 @@ public class WSConfig extends WsConfigurerAdapter {
 		return new SimpleXsdSchema(new ClassPathResource("xsds/programs.xsd"));
 	}
 	
-	@Bean(name = "enrollment")
+	@Bean(name = "enrollments")
 	public DefaultWsdl11Definition enrollmentWsdl11Definition(XsdSchema enrollmentsSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("EnrollmentPort");

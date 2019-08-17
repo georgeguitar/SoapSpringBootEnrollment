@@ -65,6 +65,9 @@ También se podrá consumir los servicios desde el cliente [soap_enrollment_clie
 ### Para crear el jar ejecutable.
 *mvn clean package*  
 
+## Para ejecutar.
+*java -jar soap-dirceu-0.0.1-SNAPSHOT.jar*
+
 ## Fuentes.
 [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)  
 [https://www.concretepage.com/spring-boot/spring-boot-soap-web-service-example](https://spring.io/projects/spring-boot)

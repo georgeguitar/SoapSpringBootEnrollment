@@ -8,6 +8,8 @@ Sede Sucre, Bolivia.
 ## Descripción.
 Proyecto que ofrece servicios SOAP que utiliza la misma base de datos que el proyecto [REST](https://github.com/georgeguitar/rest_enrollment_server.git)
 
+Cliente disponible en: [soap_enrollment_client](https://github.com/georgeguitar/soap_enrollment_client.git)  
+
 <div>
 <img src="servicio_soap.png" width="1000"/>
 </div>
@@ -27,7 +29,7 @@ Framework: Spring Boot con JAXB2 para el mapeo de clases del archivo XML (esquem
 
 ## Para consumir los servicios de SOAP.
 
-Los servicios se consumen con el programa SoapUI, se implementó los servicios para la tabla **STUDENT**, se cuenta los siguientes servicios:
+Los servicios se consumen con el programa SoapUI, se implementó los servicios para las tablas **STUDENT**, **ENROLLMENT** y **PROGRAM** se cuenta los siguientes servicios:
 
 ![Servicios](servicios_soap.png)
 
@@ -37,7 +39,10 @@ Los servicios se consumen con el programa SoapUI, se implementó los servicios p
 * getStudentById
 * UpdateStudent.
 
-Para consumir se utiliza la siguiente URL: [http://uasb-api.rootcode.com.bo:8078/soapws/students.wsdl](http://uasb-api.rootcode.com.bo:8078/soapws/students.wsdl) 
+Para consumir los servicios, se utiliza las siguientes URLs:  
+- [http://uasb-api.rootcode.com.bo:8078/soapws/students.wsdl](http://uasb-api.rootcode.com.bo:8078/soapws/students.wsdl)  
+- [http://uasb-api.rootcode.com.bo:8078/soapws/programs.wsdl](http://uasb-api.rootcode.com.bo:8078/soapws/programs.wsdl)  
+- [http://uasb-api.rootcode.com.bo:8078/soapws/enrollment.wsdl](http://uasb-api.rootcode.com.bo:8078/soapws/enrollment.wsdl)  
 
 En SoapUI, ir a "File", "New Soap Proyect". 
 En la ventana que aparece, escribir la dirección proporcionada en: “Initial WSDL”. 
@@ -46,16 +51,19 @@ Dejar seleccionada la opción: “Create sample requests for all operations” p
 El servicio “deleteStudent” solo podrá borrar aquellos estudiantes que no estén matriculados 
 (que no estén en la tabla "Enrollment"). Para hacer la prueba, se debería crear un estudiante con “addStudent” que luego borrarlo.
 
+También se podrá consumir los servicios desde el cliente [soap_enrollment_client](https://github.com/georgeguitar/soap_enrollment_client.git)
+
+
 ## Comandos de maven.
 
 ### Para importar en Eclipse.
-mvn clean eclipse:eclipse  
+*mvn clean eclipse:eclipse*  
 
 ### Para correr el proyecto.
-mvn spring-boot:run  
+*mvn spring-boot:run*  
 
 ### Para crear el jar ejecutable.
-mvn clean package  
+*mvn clean package*  
 
 ## Fuentes.
 [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)  
